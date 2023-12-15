@@ -9,7 +9,7 @@ import seaborn as sns
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.cluster import KMeans
- 
+
 def plot_hist(df:pd.DataFrame, column:str, color:str)->None:
     # plt.figure(figsize=(15, 10))
     # fig, ax = plt.subplots(1, figsize=(12, 7))
@@ -61,3 +61,4 @@ def plot_scatter(df: pd.DataFrame, x_col: str, y_col: str, title: str, hue: str,
     plt.xticks(fontsize=14)
     plt.yticks( fontsize=14)
     plt.show()
+
