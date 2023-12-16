@@ -21,7 +21,3 @@ escaped_password = quote(password, safe='')
 
 # Create the database engine
 engine = create_engine(f'postgresql://{username}:{escaped_password}@{hostname}:{port}/{database_name}')
-
-def show():
-    st.header("User Satisfaction Page")
-    # Add your general analysis content here

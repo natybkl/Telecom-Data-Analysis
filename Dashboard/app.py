@@ -1,5 +1,15 @@
 import streamlit as st
-from Dashboard import general_analysis, overview_analysis, engagement_analysis, experience_analysis, satisfaction_analysis
+import os, sys, pandas
+
+rpath = os.path.abspath('..')
+if rpath not in sys.path:
+    sys.path.insert(0, rpath)
+
+from Dashboard import general_analysis
+from Dashboard import overview_analysis
+from Dashboard import engagment_analysis
+from Dashboard import experience_analysis
+from Dashboard import satisfaction_analysis
 
 # Set page title
 st.set_page_config(page_title="TellCo Data Analysis")
@@ -16,10 +26,12 @@ menu_options = [
     "User Satisfaction Analysis",
 ]
 
-# Sidebar
-selected_page = st.sidebar.selectbox("Select Analysis", menu_options, index=0)
+# Sidebar navigation bar
+st.sidebar.markdown("<h1 style='text-align: center;'>Navigation</h1>", unsafe_allow_html=True)
 
 # Page content based on the selected option
+selected_page = st.sidebar.radio("", menu_options, index=0)
+
 if selected_page == "General Analysis":
     general_analysis.show()
 
@@ -27,7 +39,7 @@ elif selected_page == "User Overview Analysis":
     overview_analysis.show()
 
 elif selected_page == "User Engagement Analysis":
-    engagement_analysis.show()
+    engagment_analysis.show()
 
 elif selected_page == "User Experience Analysis":
     experience_analysis.show()
