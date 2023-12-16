@@ -24,7 +24,7 @@ engine = create_engine(f'postgresql://{username}:{escaped_password}@{hostname}:{
 
 
 def show():
-    st.header("TellCo Data Analysis")
+    st.header("General User Score Analysis Page")
 
     # Add a selectbox to choose between options
     main_option = st.selectbox(
